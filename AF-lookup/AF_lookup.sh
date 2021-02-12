@@ -3,7 +3,7 @@
 # This is the AF look-up script. This will pull allele frequency info from gnomAD or ALFA of variants you are interested in (variant_list.txt) and generate a flat file.
 
 ## Depending on how much memory you have available, you may not be able to download the entire gnomad.genomes database. 
-## An easy workaround is to download only the chromosomes you're interested in, and then concatenate the results together. See gnomAD_chunk_method.sh example for more details. 
+## An easy workaround is to download only the chromosomes you're interested in, and then concatenate the results together. See example_gnomad_chunk_method.sh example for more details. 
 
 #SBATCH -c 1                    # Request one core
 #SBATCH -N 1                    # Request one node
