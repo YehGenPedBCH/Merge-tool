@@ -1,5 +1,5 @@
 # AF look-up tool
-Merge phenotype database (ClinVar) with genotype databases (gnomAD, ALFA)
+Generate a flat file of genotype information of a list of variants using gnomAD or ALFA databases.
 
 # Overview
 The purpose of the AF look-up tool is to obtain estimates of allele frequencies and other genotype information of a list of variants from gnomAD and/or ALFA databases. 
