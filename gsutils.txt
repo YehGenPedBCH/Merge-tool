@@ -1,0 +1,11 @@
+# gsutil is available on Harvard transfer cluster. Directly ssh to transfer cluster and run script. 
+## See https://wiki.rc.hms.harvard.edu/display/O2/File+Transfer for more details. 
+
+#1. Switch to transfer cluster using command line.
+ssh username@transfer.rc.hms.harvard.edu
+
+#2. View release list of gnomAD genomes, explore until find one you want to copy.
+gsutil ls gs://gcp-public-data--gnomad/release/
+
+#3. Select the file you want and copy into your workspace.
+gsutil cp gs://gcp-public-data--gnomad/release/2.1.1/vcf/genomes/gnomad.genomes.r2.1.1.sites.6.vcf.bgz /your/workspace/gnomad.genomes.r2.1.1.sites.6.vcf.bgz
