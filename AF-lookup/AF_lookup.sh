@@ -20,8 +20,9 @@ module load bcftools
 module load python
 
 # 1. Pull databases.
-    ## If want gnomAD database, use gsutils. See gsutils.txt for more details.
+    ## If want gnomAD database, use gsutil.txt. See gsutils.txt for more details.
     ## Python pull for ALFA.
+    ## gsutil.txt and pull_database.py are both in parent Merge-tool folder.
 python pull_database.py
 
 #2. Edit variant_list.txt to include your variants of interest.
