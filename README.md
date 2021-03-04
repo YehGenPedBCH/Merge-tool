@@ -26,3 +26,6 @@ This tool is fast and eliminates the need to manually curate this list of varian
 2. ALFA (add more here)
 3. BCFtools documentation: http://samtools.github.io/bcftools/bcftools.html
 4. Data dictionaries (add more here)
+      - ClinVar vcf INFO TAG: https://www.ncbi.nlm.nih.gov/snp/docs/products/vcf/redesign/
+      - gnomAD
+      - ALFA
