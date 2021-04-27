@@ -50,8 +50,7 @@ Default output variables
 ![image](https://user-images.githubusercontent.com/67425562/116253392-70f75380-a73e-11eb-88fa-029774d36201.png)
 
 ## General Pipeline:
-![image](https://user-images.githubusercontent.com/67425562/116254112-13173b80-a73f-11eb-84f8-5741961eac15.png)
-
+![image](https://user-images.githubusercontent.com/67425562/116255293-19f27e00-a740-11eb-9438-a944cd345e32.png)
 
 # Merge tool Example:
 In this example, we want to produce a list of variants on the SCN5A gene that are related to Long QT in the gnomAD exome v2.1.1 database. Since SCN5A is on chromosome 3, we will only pull the gnomAD exome chromosome 3 database. 
