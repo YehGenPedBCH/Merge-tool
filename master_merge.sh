@@ -64,7 +64,7 @@ done
 if (( $4 = 1 )); then
 for j in $4;
 do
-awk 'NR==1 || ($10 ~/'"$j"'/)' clinvar_gnomad_exome_${i}.tsv > clinvar_gnomad_exome_${i}_${j}_$(date +%F).tsv;
+awk 'NR==1 || ($10 ~/'"$j"'/)' clinvar_gnomad_exome_${i}_$(date +%F).tsv > clinvar_gnomad_exome_${i}_${j}_$(date +%F).tsv;
 done
 
 fi
