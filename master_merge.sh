@@ -6,9 +6,9 @@
 #SBATCH -t 0-12:00              # Run time D-HH:MM format
 #SBATCH -p short                # Partition to run in
 #SBATCH --mem=2000              # Memory total in MB (in all cores)
-#SBATCH -e /PATH TO ERROR DIR/error/hostname_%j.err  # File to which STDERR will be written, including jobID      # Change this
+#SBATCH -e /home/gao4/clinvar-master/error/hostname_%j.err  # File to which STDERR will be written, including jobID      # Change/Delete this
 #SBATCH --mail-type=ALL         # Type of email notification- BEGIN, END, FAIL, ALL
-#SBATCH --mail-user=EMAIL ADDRESS=  # Email where notifications send to                                           # Change this
+#SBATCH --mail-user=grace.obrien@childrens.harvard.edu  # Email where notifications send to                              # Change/Delete this
 
 # Loading required modules
 module load gcc/6.2.0
