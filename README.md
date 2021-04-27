@@ -81,10 +81,10 @@ clinvar _genome_ SCN5A _longQT_2021-04-23.tsv
 3.	Export flat files using FileZilla or other file transfer software.
 4.	Pamela’s code to collapse into one AF estimate per gene.
 
-# Additional Capabilities:
+## Additional Capabilities:
 The gnomAD genome database can be used as the phenotype database instead of gnomAD exome database in the merge tool. It follows all the same steps as the gnomAD exome and ClinVar merge. We have created an R function to combine gnomAD exome and ClinVar merge tool output with gnomAD genome and ClinVar merge tool output of the same gene. This allows users to compare the variants in each gnomAD database for that gene and combine the variants’ allele frequencies from the genome and exome into one allele frequency. It combines them by using their allele counts and allele numbers. As the gnomAD genome database adds more data and more closely represents the general population’s allele frequencies, this R function will become more useful.
 
-# Limitations:
+## Limitations:
 There are three main limitations of the merge tool. Due to the size of gnomAD, we are unable to pull the entire database, instead we need to do it by chromosome. Additionally, this step of pulling gnomAD databases is not automated and needs to use a different browser than the rest of the tool. It is not able to be downloaded via FTP. We plan on developing this further and working on incorporating the gsutils command into a python script. 
 
 Additionally, we are limited by how often the databases are updated and how often the VCF files we download are updated to reflect those changes. The ClinVar VCF file is updated on the first Thursday of the month. GnomAD releases updates approximately once a year in October/November. Since the ALFA database was first released in March 2020, there has only been one update since then, and they have not stated a set release schedule yet. 
