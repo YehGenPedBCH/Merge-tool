@@ -59,15 +59,15 @@ if [[ $1  =~ ^gnomad.exome ]]; then
 for i in $3;
 do
 awk  'NR==1 || ($14 ~/'$i'/)' temp_merge_4.tsv  > clinvar_gnomad_exome_${i}_$(date +%F).tsv;
+done
 
 if (( $4 = 1 )); then
 for j in $4;
 do
-awk 'NR==1 || ($10 ~/'$j'/)' clinvar_gnomad_exome_${i}.tsv > clinvar_gnomad_exome_${i}_${j}_$(date +%F).tsv;
+awk 'NR==1 || ($10 ~/'"$j"'/)' clinvar_gnomad_exome_${i}.tsv > clinvar_gnomad_exome_${i}_${j}_$(date +%F).tsv;
 done
 
 fi
-done
 fi
 
 
