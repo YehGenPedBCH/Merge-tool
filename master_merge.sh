@@ -54,6 +54,7 @@ awk 'NR==1 || !($6 == ".") && !($6 == "0") && (($11=="criteria_provided,_multipl
         #b. Filter by GENEINFO provided in command line. Include GENEINFO name in final outuput filename
         #c. Filter by CLNDN (clinical disease name) if provided in command line. Include CLNDN name in final output filename
 
+
 if [[ $1  =~ ^gnomad.exome ]]; then
 
 for i in $3;
@@ -76,15 +77,16 @@ if [[ $1 =~ ^gnomad.genome ]]; then
 for i in $3;
 do
 awk  'NR==1 || ($14 ~/'$i'/)' temp_merge_4.tsv  > clinvar_gnomad_genome_${i}_$(date +%F).tsv;
+done
 
 if (( $4 = 1 )); then
 for j in $4;
 do
-awk 'NR==1 || ($10 ~/'$j'/)' clinvar_gnomad_genome_${i}.tsv > clinvar_gnomad_genome_${i}_${j}_$(date +%F).tsv;
+awk 'NR==1 || ($10 ~/'"$j"'/)' clinvar_gnomad_genome_${i}_$(date +%F).tsv > clinvar_gnomad_genome_${i}_${j}_$(date +%F).tsv;
 done
 
 fi
-done
 fi
+
 
 
