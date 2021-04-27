@@ -57,6 +57,7 @@ Default output variables
 In this example, we want to produce a list of variants on the SCN5A gene that are related to Long QT in the gnomAD exome v2.1.1 database. Since SCN5A is on chromosome 3, we will only pull the gnomAD exome chromosome 3 database. 
 
 1.	Download databases
+\
 ClinVar: Using FTP python code
 \
 [o2_username@login03 ~] sbatch pull_clinvar.sh
