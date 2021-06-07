@@ -1,9 +1,6 @@
 # Merge tool Example MYH7 Cardiomyopathy
-\
 ## PreEMPT group (internal use)
-\
 ## 04/15/2021
-\
 ## Overview:
 Below is a detailed example of steps to run merge tool and making simple edits to include more information in output. 
 \
@@ -19,7 +16,7 @@ We want to output the Default Settings* variables and the following additional v
 \
 CHROM, POS, ALLELEID, GENEINFO, REF, ALT, nhomalt, CLNREVSTAT, CLNSIG, CLNVC, ORIGIN, AC, AN, AF
 \
-###Steps:
+## Steps:
 \
 1.	Download scripts from github.
 2.	Download ClinVar database using pull_clinvar python script. Note: This pulls the most recent version of ClinVar GR37 and adds date of download to vcf file name. If need to pull ClinVar GR38, you need to go into the pull_clinvar python script and change it. 
@@ -30,7 +27,7 @@ Command line:
 Output:
 \
 clinvar_GR37_YEAR-MONTH-DATE.vcf.gz
-\
+
 3.	Downlaod gnomAD exome file. The easiest way to download this directly to O2 is via gsutils. For this example, we only need to download Chromosome 14. See O2 internal wiki page  for more information (https://wiki.rc.hms.harvard.edu/display/O2/File+Transfer).
 \
 Command line: This will prompt you to provide password and DUO authentication to switch over to transfer directory.
@@ -52,7 +49,7 @@ Once transfer is complete, switch back over to regular O2 by either opening up n
 Output:
 \
 gnomad.exomes.r2.1.1.sites.14_YEAR_MONTH_DAY.vcf.bgz
-\
+
 4.	For this example, we are going to show how to add more output variables and add another filter (uncomment out #5.B). If using default settings, skip to #5. Edits to code are shown in RED. 
 \
 Open master_merge shell script. Edits to code are shown in RED. 
@@ -130,7 +127,7 @@ fi
 
 ```````````````````````````````````````````````````````````
 Save this shell script with different name so you do not overwrite the original default master merge shell script. For this example, shell script was saved as “master_merge_add.sh”
-\
+
 5.	Run merge on command line.
 \
 Command line:
@@ -144,15 +141,14 @@ Output:
 	Final files: clinvar_gnomad_exome_MYH7 _YEAR-MONTH-DAY.tsv
 	\
 		    clinvar_gnomad_exome_MYH7 _cardio_YEAR-MONTH-DAY.tsv
-\
+
 6.	Export final file via FileZilla to get dataset onto your desktop. See O2 wiki page for details (https://wiki.rc.hms.harvard.edu/display/O2/File+Transfer). 
 \
-Additional Notes:
-\
+## Additional Notes:
 
 1.	Important dates: gnomADv3.1 exome database is expected to be released in October/November 2021. This version will have genome reference GR38, so we will need to merge it with ClinVar GR38 instead of GR37. We will also need to see if variable names/definitions change with this release.
-\
+
 2.	We should keep tabs on the gnomAD genome database- when it becomes a more representative sample, we will eventually want to switch over to this instead of the gnomAD exome database. I do not think this will happen anytime soon though.
-\
+
 3.	If we want to use different genotype and phenotype databases, the merge tool code will need to be tweaked. If the two files to be merged are VCFs and have the same genome reference and index file, it should not be very difficult to do. Merging ALFA with ClinVar is more difficult because they do not use the same index file- we have that only partially done (see clinvar-ALFA-merge directory).
 
