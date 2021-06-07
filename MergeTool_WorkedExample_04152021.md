@@ -17,7 +17,6 @@ We want to output the Default Settings* variables and the following additional v
 CHROM, POS, ALLELEID, GENEINFO, REF, ALT, nhomalt, CLNREVSTAT, CLNSIG, CLNVC, ORIGIN, AC, AN, AF
 \
 ## Steps:
-\
 1.	Download scripts from github.
 2.	Download ClinVar database using pull_clinvar python script. Note: This pulls the most recent version of ClinVar GR37 and adds date of download to vcf file name. If need to pull ClinVar GR38, you need to go into the pull_clinvar python script and change it. 
 \
