@@ -52,7 +52,7 @@ gnomad.exomes.r2.1.1.sites.14_YEAR_MONTH_DAY.vcf.bgz
 
 4.	For this example, we are going to show how to add more output variables and add another filter (uncomment out #5.B). If using default settings, skip to #5. Edits to code are shown in RED. 
 \
-Open master_merge shell script. Edits to code are shown in RED. 
+Open master_merge shell script. Edits to code are shown in RED (docx version only).
 \
 Master_merge shell script:
 ```````````````````````````````````````````````````````````
@@ -143,7 +143,7 @@ Output:
 		    clinvar_gnomad_exome_MYH7 _cardio_YEAR-MONTH-DAY.tsv
 
 6.	Export final file via FileZilla to get dataset onto your desktop. See O2 wiki page for details (https://wiki.rc.hms.harvard.edu/display/O2/File+Transfer). 
-\
+
 ## Additional Notes:
 
 1.	Important dates: gnomADv3.1 exome database is expected to be released in October/November 2021. This version will have genome reference GR38, so we will need to merge it with ClinVar GR38 instead of GR37. We will also need to see if variable names/definitions change with this release.
