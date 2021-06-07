@@ -1,13 +1,18 @@
 Merge tool Example MYH7 Cardiomyopathy
+\
 PreEMPT group (internal use)
+\
 04/15/2021
+\
 Overview:
 Below is a detailed example of steps to run merge tool and making simple edits to include more information in output. 
 For this example, we are interested in generated a flat file of variants on gene MYH7 on chromosome 14 with the following phenotypic characteristics: 
 
+![Capture1](https://user-images.githubusercontent.com/67425562/121085518-f6dfd300-c7af-11eb-89c7-da1928069aae.PNG)
+
 We want to output the Default Settings* variables and the following additional variables: 
 
-
+![image](https://user-images.githubusercontent.com/67425562/121085492-eaf41100-c7af-11eb-9863-95ed07fafc29.png)
 
 *Default Settings variables include the following: 
 CHROM, POS, ALLELEID, GENEINFO, REF, ALT, nhomalt, CLNREVSTAT, CLNSIG, CLNVC, ORIGIN, AC, AN, AF
