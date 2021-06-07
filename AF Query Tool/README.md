@@ -65,9 +65,9 @@ ALFA: Using FTP python code
 \
 [o2_username@login03 ~] sbatch ALFA_pull.sh
 \
-gnomAD: Using gsutils in transfer directory. Repeat for chromosomes 6, 9, 12, 14, 16, 18, 21.
+gnomAD: Using gsutils in transfer directory. Repeat for chromosomes 1, 6, 9, 12, 14, 16, 18
 \
-[o2_username@transfer01 ~]$ gsutil cp gs://gcp-public-data--gnomad/release/2.1.1/vcf/genomes/gnomad.genomes.v3.1.1.sites.chr1.vcf.bgz /home/o2_username/AF query tool location/gnomad.genomes.v3.1.1.sites.chr2_$(date +%F).vcf.bgz
+[o2_username@transfer01 ~]$ gsutil cp gs://gcp-public-data--gnomad/release/2.1.1/vcf/genomes/gnomad.genomes.v3.1.1.sites.chr21.vcf.bgz /home/o2_username/AF query tool location/gnomad.genomes.v3.1.1.sites.chr21_$(date +%F).vcf.bgz
 
 3.	Run AF_query with ALFA database
 \
@@ -77,13 +77,13 @@ This will output the flat TSV file:
 \
 ALFA_AF_cardio_variants_2021-04-23.tsv
 
-4.	Run AF_query with gnomAD genome database for chromosome 1.
+4.	Run AF_query with gnomAD genome database for chromosome 21.
 \
-[o2_username@login03 ~]  sbatch master_AF_query.sh gnomad.genomes.v3.1.1.sites.chr2_2021-04-23.vcf.bgz cardio_variants_2021-04-23.txt
+[o2_username@login03 ~]  sbatch master_AF_query.sh gnomad.genomes.v3.1.1.sites.chr21_2021-04-23.vcf.bgz cardio_variants_2021-04-23.txt
 \
 This will output the flat TSV file:
 \
-gnomad.genomes.v3.1.1.sites.chr2_AF_cardio_variants_2021-04-23.tsv
+gnomad.genomes.v3.1.1.sites.chr21_AF_cardio_variants_2021-04-23.tsv
 \
 Repeat this step for all other chromosomes that the variants of interest are on.
 
