@@ -61,7 +61,7 @@ rs4149178
 
 2.	Download databases
 \
-ClinVar: Using FTP python code
+ALFA: Using FTP python code
 \
 [o2_username@login03 ~] sbatch ALFA_pull.sh
 \
