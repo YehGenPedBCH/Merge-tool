@@ -11,9 +11,9 @@ The tool uses python to pull ClinVar databases, gsutils to pull gnomAD databases
 ## Database Background:
 ClinVar is a public archive of reports of relationships between human variations and phenotypes, including clinical significance, submitter details, and other related data [1]. These reports are aggregated and downloadable via FTP. This database allows us to assess the clinical validity and significance of genetic variants for certain diseases to decide which variants to include in our model input parameters. It is updated monthly. 
 
-GnomAD (Genomic Aggregation Database) is a public archive of exome and whole-genome sequences from disease-specific and population genetic studies [2]. It contains genotype information, including allele frequency estimates of the overall population and by specific subpopulations. There are two gnomAD databases that are available: genome and exome. The most recent version available for it is v3.1.1, updated November 2021. 
+GnomAD (Genomic Aggregation Database) is a public archive of exome and whole-genome sequences from disease-specific and population genetic studies [2]. It contains genotype information, including allele frequency estimates of the overall population and by specific subpopulations. There are two gnomAD databases that are available: genome and exome. 
 
-For the purposes of our projects, we chose to pull gnomAD exome version 2.1.1. We chose gnomAD v2 database because the Broad Institute recommends using it for coding region analyses. For non-coding regions, they recommend using the gnomAD v3 database (https://gnomad.broadinstitute.org/faq). This is because gnomAD v2 has a much larger number of exomes. GnomAD v3 is currently only available as a genome database, not an exome database. 
+For the purposes of our projects, we chose to pull gnomAD exome version 2.1.1. We chose gnomAD v2 database because the Broad Institute recommends using it for coding region analyses, and because gnomAD v2 has a much larger number of observations. For non-coding regions, the Broad recommends using the gnomAD v3 database (https://gnomad.broadinstitute.org/faq). GnomAD v3 is currently only available as a genome database, not an exome database. The most recent version available for the genome database is v3.1.1, updated November 2021.
 
 The gnomAD exome database is linked to GR37. While GR38 is the newer, more updated genomic reference, the most updated gnomAD exome database is linked to GR37. Therefore, we have decided to use ClinVar GR37 and gnomAD GR37 exome databases for now. As these databases are updated, we will update the Merge Tool to reflect the best databases available.  
 
@@ -50,7 +50,8 @@ Default output variables
 ![image](https://user-images.githubusercontent.com/67425562/116253392-70f75380-a73e-11eb-88fa-029774d36201.png)
 
 ## General Pipeline:
-![image](https://user-images.githubusercontent.com/67425562/116255293-19f27e00-a740-11eb-9438-a944cd345e32.png)
+![image](https://user-images.githubusercontent.com/67425562/121228831-3b747880-c85b-11eb-982c-73709a541fbd.png)
+
 
 # Merge tool Example:
 In this example, we want to produce a list of variants on the SCN5A gene that are related to Long QT in the gnomAD exome v2.1.1 database. Since SCN5A is on chromosome 3, we will only pull the gnomAD exome chromosome 3 database. 
@@ -78,7 +79,20 @@ clinvar _genome_ SCN5A _2021-04-23.tsv
 clinvar _genome_ SCN5A _longQT_2021-04-23.tsv
 
 3.	Export flat files using FileZilla or other file transfer software.
-4.	Pamela’s code to collapse into one AF estimate per gene.
+4.	Manual curation of variants if needed. This may be disease-specific and vary by project. Document additional steps as needed.
+5.	Collapse merge tool output to an estimate of one AF per gene
+\
+a.	Let AF = sum of AF_exome
+\
+b.	Let Sample Size = Average(AN_exome) where AN = allele number
+\
+      i. Note the MAX sample size = 2 x # people in gnomAD
+\
+      ii.	# people in gnomAD v2* exomes only = 125,748  max = 251,496
+\
+c.	Let alpha = AF*sample size
+\
+d.	Finally, let beta = sample size – alpha
 
 ## Additional Capabilities:
 The gnomAD genome database can be used as the phenotype database instead of gnomAD exome database in the merge tool. It follows all the same steps as the gnomAD exome and ClinVar merge. We have created an R function to combine gnomAD exome and ClinVar merge tool output with gnomAD genome and ClinVar merge tool output of the same gene. This allows users to compare the variants in each gnomAD database for that gene and combine the variants’ allele frequencies from the genome and exome into one allele frequency. It combines them by using their allele counts and allele numbers. As the gnomAD genome database adds more data and more closely represents the general population’s allele frequencies, this R function will become more useful.
