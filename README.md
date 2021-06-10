@@ -21,7 +21,7 @@ The gnomAD exome database is linked to GR37. While GR38 is the newer, more updat
 The ClinVar and gnomAD databases can be downloaded as VCF files. VCF files are formatted in such a way that there are different subfields and specific ways to assess these fields. The merge tool uses BCFtools, a program for querying, sorting, and manipulating VCF files, to perform operations on these genomic databases [3]. BCFtools package is part of a larger genomic program called HTSLib [4]. BCFtools is a well-documented and maintained program that makes VCF file handling clear and manageable. The primary commands we use in the merge tool are view, query, and annotate. For further information on BCFtools, visit the source code and documentation sites (https://www.htslib.org/, https://github.com/samtools/bcftools).  
 
 ## Setup:
-To use this tool, you need access to a Linux/Unix-based computing platform. Download the github repository and install the required programs (https://github.com/graceannobrien/Merge-tool). Additional edits can be made to customize it to your project’s specific needs. See Extended Doc for more details on customizing the tool.
+To use this tool, you need access to a Linux/Unix-based computing platform. Download the github repository and install the required programs (https://github.com/YehGenPedBCH/Merge-tool/). Additional edits can be made to customize it to your project’s specific needs. See Extended Doc for more details on customizing the tool.
 
 ## Input formats:
 This tool works for VCF files only.
